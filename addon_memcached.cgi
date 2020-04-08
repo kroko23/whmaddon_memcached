@@ -51,7 +51,7 @@ sub main {
 sub restartmemcached {
         print $header;
         print "<legend>Restarted</legend>";
-        system ("/etc/init.d/memcached stop");
+        system ("su - root -c \"/etc/init.d/memcached stop\"");
         print "<br>";
         system ("su - root -c \"/etc/init.d/memcached start\"");
         print $footer;
